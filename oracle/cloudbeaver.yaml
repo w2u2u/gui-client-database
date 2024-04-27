@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  oracle:
+    image: wnameless/oracle-xe-11g-r2:18.04-apex
+    container_name: OracleDb
+    restart: always
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_DISABLE_ASYNCH_IO=true
+      - ORACLE_ENABLE_XDB=true
+    ports:
+      - 5019:1521
+      - 5020:8080
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:22.1.1
+    container_name: CloudBeaver
+    restart: unless-stopped
+    volumes:
+      - dbeaver-data:/opt/cloudbeaver/workspace
+    ports:
+      - 5021:8978
+
+volumes:
+  dbeaver-data:

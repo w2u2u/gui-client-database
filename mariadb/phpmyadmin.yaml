@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  maria:
+    image: mariadb:10.6
+    container_name: MariaDB
+    restart: always
+    environment:
+      - MARIADB_DATABASE=quotes
+      - MARIADB_USER=citizix_user
+      - MARIADB_PASSWORD=An0thrS3crt
+      - MARIADB_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
+    volumes:
+      - maria-data:/var/lib/mysql
+    ports:
+      - 5018:3306
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.0
+    container_name: PhpMyAdmin   
+    restart: always
+    ports:
+      - 5013:80
+    environment:
+      - PMA_ARBITRARY=1
+    
+volumes:
+  maria-data:

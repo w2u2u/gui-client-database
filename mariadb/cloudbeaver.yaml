@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  maria:
+    image: mariadb:10.6
+    container_name: MariaDB
+    restart: always
+    environment:
+      - MARIADB_DATABASE=quotes
+      - MARIADB_USER=citizix_user
+      - MARIADB_PASSWORD=An0thrS3crt
+      - MARIADB_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
+    volumes:
+      - maria-data:/var/lib/mysql
+    ports:
+      - 5018:3306
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:22.1.1
+    container_name: CloudBeaver
+    restart: unless-stopped
+    volumes:
+      - dbeaver-data:/opt/cloudbeaver/workspace
+    ports:
+      - 5021:8978
+    
+volumes:
+  maria-data:
