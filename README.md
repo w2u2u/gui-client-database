@@ -4,23 +4,24 @@
 
 ```
 PostgreSQL
-docker-compose -f docker-compose.pgsql.yml up -d
+docker-compose -f postgresql/pgadmin.yaml up -d
 
 MySQL
-docker-compose -f docker-compose.mysql.yml up -d
-docker-compose -f docker-compose.mysql.workbench.yml up -d
+docker-compose -f mysql/phpmyadmin.yaml up -d
+docker-compose -f mysql/mysql-workbench.yaml up -d
 
 MongoDB
-docker-compose -f docker-compose.mongo.yml up -d 
+docker-compose -f mongodb/mongoclient.yaml up -d 
 
 SQLServer
-docker-compose -f docker-compose.sqlserver.yml up -d
+docker-compose -f sqlserver/cloudbeaver.yaml up -d
 
 MariaDB
-docker-compose -f docker-compose.maria.yml up -d
+docker-compose -f mariadb/phpmyadmin.yaml up -d
+docker-compose -f mariadb/cloudbeaver.yaml up -d
 
 Oracle
-docker-compose -f docker-compose.oracle.yml up -d
+docker-compose -f oracle/cloudbeaver.yaml up -d
 ```
 
 ## Ports
