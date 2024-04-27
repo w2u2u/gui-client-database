@@ -2,25 +2,25 @@
 
 ## Commands 
 
-```
-PostgreSQL
+```sh
+# PostgreSQL
 docker-compose -f postgresql/pgadmin.yaml up -d
 
-MySQL
+# MySQL
 docker-compose -f mysql/phpmyadmin.yaml up -d
 docker-compose -f mysql/mysql-workbench.yaml up -d
 
-MongoDB
+# MongoDB
 docker-compose -f mongodb/mongoclient.yaml up -d 
 
-SQLServer
+# SQLServer
 docker-compose -f sqlserver/cloudbeaver.yaml up -d
 
-MariaDB
+# MariaDB
 docker-compose -f mariadb/phpmyadmin.yaml up -d
 docker-compose -f mariadb/cloudbeaver.yaml up -d
 
-Oracle
+# Oracle
 docker-compose -f oracle/cloudbeaver.yaml up -d
 ```
 
